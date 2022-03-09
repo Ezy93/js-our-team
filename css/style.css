@@ -2,3 +2,7 @@ div.card{
     width: calc((100% / 3) - 2rem);
 }
 
+div.card-body{
+    background-color: cornsilk;
+    margin-top: 0.3rem;
+}

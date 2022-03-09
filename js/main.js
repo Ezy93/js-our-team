@@ -47,7 +47,9 @@ Ogni membro ha le informazioni necessarie per stampare le relative informazioni:
         },
     ];
 
-    for(let i = 0; i < team.length; i++){
+
+    //? METODO APPENDCHILD
+/*     for(let i = 0; i < team.length; i++){
         console.warn(`     nome ,          ruolo,           link immagine`)
         console.log(`${team[i].name} , ${team[i].role} , ${team[i].image}`);
 
@@ -76,20 +78,24 @@ Ogni membro ha le informazioni necessarie per stampare le relative informazioni:
         card.appendChild(cardBody);
         
 
-        document.getElementById("img-container").appendChild(card , cardBody);
+        document.getElementById("card-container").appendChild(card , cardBody);
 
 
+    } */
+
+    //? METODO TEMPLATE LITERAL
+    for(let i = 0; i < team.length; i++){
+        document.getElementById("card-container").innerHTML += `
+        <div class="card p-1 m-3">
+            <img src="img/${team[i].image}" class="card-img-top" alt="someone randome image">
+            <div class="card-body">
+                <h5 class="card-title">${team[i].name}</h5>
+                <p class="card-text">${team[i].role}</p>
+
+            </div>
+        </div>`
     }
 
 
-/*     for(let i =0; i < randomNumbers.length; i++) {
 
-        divNumberContainer = document.createElement("div");
-        divNumberContainer.classList.add("numberContainer" , "d-flex" , "justify-content-center" , "align-items-center" , "fs-1");
-        divNumberContainer.style.width = `calc(100% / ${randomNumbers.length})`
-        numbersDisplay.appendChild(divNumberContainer);
-        divNumberContainer.innerHTML = randomNumbers[i];
-    
-    } */
 
-    
